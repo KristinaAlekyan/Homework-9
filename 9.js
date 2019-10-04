@@ -151,3 +151,115 @@ It should have toString method.
             console.log(accountFirst);
         console.log(Account.identifyAccounts(accountFirst, accountSecond));
         console.log(Account.identifyAccounts(accountThird, accountSecond));
+
+
+
+
+/*Write classes: Person, Student, Staff.
+Person should have: firstName, lastName, gender, age.
+It should have appropriate getters and setters.
+It should have a method: toString().
+
+Student is inherited from Person. It should have program(array of strings), year, fee.
+It should have appropriate getters and setters. 
+It should have method: passExam(program, grade). Student should contain the data about its programs and exams. passExam will update that data, so if student passed all the exams(grade is great or equal to 50), its year should be increased by one.
+It should have a toString method.
+
+Teacher is inherited from Person. It should have program(string), pay.
+It should have appropriate getters and setters. 
+It should have a toString method.*/
+
+
+        class Person {
+        	constructor(firstName,lastName,gender,age){
+       			  this.firstName = firstName;
+        		  this.lastName = lastName;
+      			  this.gender = gender;
+                          this.age = age;
+   		 }
+	   get fistNameOfPerson(){
+ 		return this.firstName;
+	   }
+	   set fistNameOfPerson(value){
+ 		return this.firstName = value;
+	   }
+
+	   get lastNameOfPerson(){
+ 		return this.lastName;
+	   }
+	   set lastNameOfPerson(value){
+ 		return this.lastName = value;
+	   }
+	   get genderOfPerson(){
+ 		return this.gender;
+	   }
+	   set genderOfPerson(value){
+ 		return this.gender = value;
+	   }
+        }
+
+let person = new Person("Kristina","Alekyan","female",32);
+
+        
+        class Student extends Person {
+            constructor (firstName, lastName, gender, age, program = [], year, fee) {
+                super(firstName, lastName, gender, age);
+                this.program = program;
+                this.year = year;
+                this.fee = fee;
+            }
+
+
+	get programOfStudent(){
+        	return this.program;
+    	}
+   	set programOfStudent(value){
+        	return this.program = value;
+    	}    
+    	get yearOfStudent(){
+        	return this.year;
+    	}
+    	set yearOfStudent(value){
+        	return this.year = value;
+    	} 
+    	get feeOfStudent(){
+        	return this.fee;
+   	 }
+    	set feeOfStudent(value){
+       		return this.fee = value;
+    	}    
+
+	passExam(program, grade,year){
+		for(let i=0; i <= program.length; i++){
+        	if(grade>=50){
+          	program.shift();
+        	}
+	      }
+	 if(program.length===0){
+            return ++year;
+        }
+        return year;
+    
+    }
+    
+    
+    toString(){
+        return "Student toStringMetod?? "
+    }
+	}
+let student = new Student("Kristina","Alekyan","female", 32, ["JS","HTML"],3, 1000, 51);
+
+class Teacher extends Person {
+            constructor (firstName, lastName, gender,age, program,pay) {
+                super(firstName,lastName,gender,age);
+                this.program = program;
+                this.pay = pay;
+            }
+}
+
+
+
+
+console.log(student.passExam(["JS","HTML"],115,1));
+let teacher= new Teacher("Kristina","Alekyan","female", 32,"ACA teacher", 100);
+console.log(teacher);
