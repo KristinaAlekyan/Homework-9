@@ -93,24 +93,24 @@ It should have a static method: identifyAccounts(accountFirst, accountSecond) wh
 It should have toString method.
 */class Account {
             constructor (id, name, balance) {
-                this.id = id;
-                this.name = name;
-                this.balance = balance;
+                this._id = id;
+                this._name = name;
+                this._balance = balance;
             }
-            get idOfAccount() {
-                return this.id;
+            get id() {
+                return this._id;
             }
-            get nameOfAccount() {
-                return this.name;
+            get name() {
+                return this._name;
             }
-            set nameOfAccount(value) {
-                return this.name = value;
+            set name(value) {
+                return this._name = value;
             }
-            get balanceOfAccount() {
-                return this.balance;
+            get balance() {
+                return this._balance;
             }
-            set balanceOfAccount(value) {
-                return this.balance = value;
+            set balance(value) {
+                return this._balance = value;
             }
             credit(amount) {
                 this.balance += amount;
@@ -151,8 +151,6 @@ It should have toString method.
             console.log(accountFirst);
         console.log(Account.identifyAccounts(accountFirst, accountSecond));
         console.log(Account.identifyAccounts(accountThird, accountSecond));
-
-
 
 
 /*3) Write classes: Person, Student, Staff.
