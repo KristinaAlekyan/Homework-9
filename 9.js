@@ -155,7 +155,7 @@ It should have toString method.
 
 
 
-/*Write classes: Person, Student, Staff.
+/*3) Write classes: Person, Student, Staff.
 Person should have: firstName, lastName, gender, age.
 It should have appropriate getters and setters.
 It should have a method: toString().
