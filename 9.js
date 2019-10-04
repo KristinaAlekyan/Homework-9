@@ -167,32 +167,37 @@ Teacher is inherited from Person. It should have program(string), pay.
 It should have appropriate getters and setters. 
 It should have a toString method.*/
 
-
-        class Person {
+class Person {
         	constructor(firstName,lastName,gender,age){
-       			  this.firstName = firstName;
-        		  this.lastName = lastName;
-      			  this.gender = gender;
-                          this.age = age;
+       			  this._firstName = firstName;
+        		  this._lastName = lastName;
+      			  this._gender = gender;
+                  this._age = age;
    		 }
-	   get fistNameOfPerson(){
- 		return this.firstName;
+	   get fistName(){
+ 		return this._firstName;
 	   }
-	   set fistNameOfPerson(value){
- 		return this.firstName = value;
+	   set fistName(value){
+ 		return this._firstName = value;
 	   }
 
-	   get lastNameOfPerson(){
- 		return this.lastName;
+	   get lastName(){
+ 		return this._lastName;
 	   }
-	   set lastNameOfPerson(value){
- 		return this.lastName = value;
+	   set lastName(value){
+ 		return this._lastName = value;
 	   }
-	   get genderOfPerson(){
- 		return this.gender;
+	   get gender(){
+ 		return this._gender;
 	   }
-	   set genderOfPerson(value){
- 		return this.gender = value;
+	   set gender(value){
+ 		return this._gender = value;
+	   }
+        get age(){
+ 		return this._age;
+	   }
+	   set age(value){
+ 		return this._age = value;
 	   }
         }
 
@@ -202,29 +207,29 @@ let person = new Person("Kristina","Alekyan","female",32);
         class Student extends Person {
             constructor (firstName, lastName, gender, age, program = [], year, fee) {
                 super(firstName, lastName, gender, age);
-                this.program = program;
-                this.year = year;
-                this.fee = fee;
+                this._program = program;
+                this._year = year;
+                this._fee = fee;
             }
 
 
-	get programOfStudent(){
+	get program(){
         	return this.program;
     	}
-   	set programOfStudent(value){
-        	return this.program = value;
+   	set program(value){
+        	return this._program = value;
     	}    
-    	get yearOfStudent(){
-        	return this.year;
+    	get year(){
+        	return this._year;
     	}
-    	set yearOfStudent(value){
-        	return this.year = value;
+    	set year(value){
+        	return this._year = value;
     	} 
-    	get feeOfStudent(){
-        	return this.fee;
+    	get fee(){
+        	return this._fee;
    	 }
-    	set feeOfStudent(value){
-       		return this.fee = value;
+    	set fee(value){
+       		return this._fee = value;
     	}    
 
 	passExam(program, grade,year){
@@ -250,8 +255,8 @@ let student = new Student("Kristina","Alekyan","female", 32, ["JS","HTML"],3, 10
 class Teacher extends Person {
             constructor (firstName, lastName, gender,age, program,pay) {
                 super(firstName,lastName,gender,age);
-                this.program = program;
-                this.pay = pay;
+                this._program = program;
+                this._pay = pay;
             }
 }
 
@@ -261,3 +266,5 @@ class Teacher extends Person {
 console.log(student.passExam(["JS","HTML"],115,1));
 let teacher= new Teacher("Kristina","Alekyan","female", 32,"ACA teacher", 100);
 console.log(teacher);
+
+       
